@@ -1,0 +1,88 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type": "small",
+        "padding": {
+            "top": 3,
+            "right": 3,
+            "left": 4
+        }
+    },
+    "display": {
+        "separator": ">  ",
+        "color": {
+            "separator": "blue"
+        },
+        "constants": [
+            "──────────────────────────────────────────────────────────",
+            "│\u001b[58C│\u001b[58D"
+        ]
+    },
+    "modules": [
+        {
+            "format": "{#1}{#36}╭{$1}╮\u001b[43D {#36}{user-name}{#39}@{#36}{host-name} ",
+            "type": "title"
+        },
+        {
+            "key": "{#36}{$2}{#31} kernel   ",
+            "type": "kernel"
+        },
+        {
+            "key": "{#36}{$2}{#32}󰅐 uptime   ",
+            "type": "uptime"
+        },
+        {
+            "key": "{#36}{$2}{#33}{icon} distro   ",
+            "type": "os"
+        },
+        {
+            "key": "{#36}{$2}{#34}󰇄 desktop  ",
+            "type": "de"
+        },
+        {
+            "key": "{#36}{$2}{#35} term     ",
+            "type": "terminal"
+        },
+        {
+            "key": "{#36}{$2}{#36} shell    ",
+            "type": "shell"
+        },
+        {
+            "key": "{#36}{$2}{#35}󰍛 cpu      ",
+            "type": "cpu",
+            "showPeCoreCount": true,
+            "temp": true
+        },
+        {
+            "key": "{#36}{$2}{#34}󰍛 gpu      ",
+            "type": "gpu"
+        },
+        {
+            "key": "{#36}{$2}{#33}󰉉 disk     ",
+            "type": "disk",
+            "folders": "/"
+        },
+        {
+            "key": "{#36}{$2}{#32} memory   ",
+            "type": "memory"
+        },
+        {
+            "key": "{#36}{$2}{#31}󰩟 network  ",
+            "type": "localip",
+            "format": "{ipv4} ({ifname})"
+        },
+        {
+            "format": "{#1}{#36}├{$1}┤",
+            "type": "custom"
+        },
+        {
+            "key": "{#36}{$2}{#39} colors   ",
+            "type": "colors",
+            "symbol": "circle"
+        },
+        {
+            "format": "{#1}{#36}╰{$1}╯",
+            "type": "custom"
+        }
+    ]
+}
