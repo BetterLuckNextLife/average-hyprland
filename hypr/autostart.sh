@@ -1,15 +1,19 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
 
-terminal=alacritty
+terminal=${TERMINAL:-kitty}
+
+launch() {
+    hyprctl dispatch exec "$1"
+}
 
 hyprctl dispatch workspace 1
 
-hyprctl dispatch exec "[workspace 2 silent] firefox"
-hyprctl dispatch exec "[workspace 3 silent] nvim"
-hyprctl dispatch exec "[workspace 4 silent] md.obsidian.Obsidian"
-hyprctl dispatch exec "[workspace 5 silent] Telegram"
-hyprctl dispatch exec "[workspace 1] $terminal"
+launch "[workspace 2 silent] firefox"
+launch "[workspace 3 silent] $terminal -e nvim"
+launch "[workspace 4 silent] md.obsidian.Obsidian"
+launch "[workspace 5 silent] Telegram"
+launch "[workspace 1] $terminal"
 
-sleep 2
-
+sleep 1
 hyprctl dispatch workspace 1
